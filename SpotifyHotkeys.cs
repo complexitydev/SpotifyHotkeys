@@ -66,9 +66,7 @@ namespace SpotifyHotkeys
                      && (Win32.GetAsyncKeyState(VK_SPACE) & 0x8000) > 0)
                 {
                     var spotify_window = SetSpotifyForeground();
-                    Win32.SendMessage(spotify_window, WM_KEYDOWN, (IntPtr)VK_CTRL, IntPtr.Zero);
                     Win32.SendMessage(spotify_window, WM_KEYDOWN, (IntPtr)VK_SPACE, IntPtr.Zero);
-                    Win32.SendMessage(spotify_window, WM_KEYUP, (IntPtr)VK_CTRL, IntPtr.Zero);
                     Win32.SendMessage(spotify_window, WM_KEYUP, (IntPtr)VK_SPACE, IntPtr.Zero);
                     ResetForegroundProcess(current_handle);
                 }
